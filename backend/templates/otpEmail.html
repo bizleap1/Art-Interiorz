@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Your Artz Interior Verification Code</title>
+  <style>
+    body {font-family: Arial, Helvetica, sans-serif; background:#f5f5f5; margin:0; padding:0;}
+    .container {max-width:600px; margin:40px auto; background:#ffffff; border-radius:12px; padding:30px; box-shadow:0 4px 12px rgba(0,0,0,0.1);}
+    .logo {text-align:center; margin-bottom:20px;}
+    .logo img {max-width:150px;}
+    .header {color:#2c3e50; font-size:24px; text-align:center; margin-bottom:10px;}
+    .otp {font-size:32px; font-weight:bold; letter-spacing:4px; color:#e74c3c; text-align:center; margin:20px 0;}
+    .footer {font-size:12px; color:#777777; text-align:center; margin-top:30px;}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="{{LOGO_URL}}" alt="Artz Interior Logo">
+    </div>
+    <div class="header">Your Verification Code</div>
+    <p style="text-align:center; font-size:16px; color:#555;">Enter the following OTP to verify your email address.</p>
+    <div class="otp">{{OTP}}</div>
+    <p style="text-align:center; font-size:14px; color:#555;">This code is valid for <strong>10 minutes</strong> and will expire after that.</p>
+    <p style="text-align:center; font-size:14px; color:#555;">For your security, do not share this code with anyone.</p>
+    <div class="footer">© 2017 Artz Interior. All rights reserved.</div>
+  </div>
+</body>
+</html>
