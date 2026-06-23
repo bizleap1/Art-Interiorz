@@ -4,7 +4,7 @@ import { Reveal, SectionLabel } from "@/components/site/Reveal";
 import { useEffect, useState, useRef } from "react";
 import { supabase } from "@/lib/supabase";
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ChevronDown } from "lucide-react";
 
 export default function CareerPage() {
   const [isSubmittingVendor, setIsSubmittingVendor] = useState(false);
@@ -188,7 +188,20 @@ export default function CareerPage() {
                       </label>
                       <label className="block">
                         <span className="text-[10px] tracking-luxury uppercase text-muted-foreground">Role Applied For</span>
-                        <input type="text" name="role" placeholder="e.g. Senior Architect" required disabled={isSubmittingArchitect} className="mt-2 w-full bg-transparent border-b border-border focus:border-gold outline-none py-3 text-charcoal transition-colors disabled:opacity-50 placeholder:text-muted-foreground/30" />
+                        <div className="relative mt-2">
+                          <select name="role" required disabled={isSubmittingArchitect} className="w-full bg-transparent border-b border-border focus:border-gold outline-none py-3 pr-10 text-charcoal transition-colors disabled:opacity-50 appearance-none cursor-pointer">
+                            <option value="" disabled selected className="text-muted-foreground bg-warm-white">Select a role</option>
+                            <option value="Senior Architect" className="bg-warm-white py-2">Senior Architect</option>
+                            <option value="Junior Architect" className="bg-warm-white py-2">Junior Architect</option>
+                            <option value="Interior Designer" className="bg-warm-white py-2">Interior Designer</option>
+                            <option value="3D Visualizer" className="bg-warm-white py-2">3D Visualizer</option>
+                            <option value="Project Manager" className="bg-warm-white py-2">Project Manager</option>
+                            <option value="Other" className="bg-warm-white py-2">Other</option>
+                          </select>
+                          <div className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-charcoal/50">
+                            <ChevronDown size={18} />
+                          </div>
+                        </div>
                       </label>
                       <label className="block">
                         <span className="text-[10px] tracking-luxury uppercase text-muted-foreground">Portfolio / Resume Link</span>

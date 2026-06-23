@@ -51,7 +51,7 @@ export const serviceCategoriesData = {
         "Hardscape & Softscape Planning",
         "Water Features & Lighting",
       ],
-      image: "/assets/portfolio/Services/specialize/landscape-design-new.png",
+      image: "/assets/portfolio/Services/specialize/landscape.jpeg",
     },
   ],
 };
@@ -75,7 +75,7 @@ export const servicesDetailData = [
   {
     title: "Landscape Design",
     text: "We bring life to exteriors — from home gardens and terraces to commercial courtyards. We blend greenery, pathways, lighting, and seating into an outdoor oasis.",
-    image: "/assets/portfolio/Services/specialize/landscape-design-new.png",
+    image: "/assets/portfolio/Services/specialize/landscape.jpeg",
   },
   {
     title: "3D Visualization & Walkthroughs",

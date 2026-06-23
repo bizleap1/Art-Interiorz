@@ -304,7 +304,7 @@ export default function LivspaceCalculatorPage() {
 
     details += `\n💰 *Estimated Quote:*\n*${calculateEstimate()}*\n`;
 
-    const message = `Hello *Artz Interior*! 👋\nI used your website calculator and would like to request a final quote.\n\nHere are my requirements:\n\n${details}\nPlease let me know the next steps!`;
+    const message = `Hello *Art Interiorz*! 👋\nI used your website calculator and would like to request a final quote.\n\nHere are my requirements:\n\n${details}\nPlease let me know the next steps!`;
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
   };
@@ -325,7 +325,7 @@ export default function LivspaceCalculatorPage() {
     const gst = Math.round(avgPrice * 0.18);
     const totalWithGst = avgPrice + gst;
 
-    const billNo = `ARTZ-${new Date().getFullYear()}${String(Math.floor(Math.random() * 10000)).padStart(4, '0')}`;
+    const billNo = `ART-${new Date().getFullYear()}${String(Math.floor(Math.random() * 10000)).padStart(4, '0')}`;
     const billDate = new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
     const validUntil = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
     const projectType = type === 'full-home' ? 'Full Home Interior' : type === 'kitchen' ? 'Kitchen Interior' : 'Wardrobe';
@@ -427,7 +427,7 @@ export default function LivspaceCalculatorPage() {
 <body>
     <div class="invoice">
         <div class="header">
-            <div class="logo">ARTZ INTERIOR</div>
+            <div class="logo">ART INTERIORZ</div>
             <div class="tagline">Transforming Spaces, Creating Dreams Since 2017</div>
         </div>
 
@@ -569,11 +569,11 @@ export default function LivspaceCalculatorPage() {
         </div>
         <div class="info-row">
             <div class="info-label">Address:</div>
-            <div class="info-value">Artz Interior, Mumbai, Maharashtra, India</div>
+            <div class="info-value">Art Interiorz, Mumbai, Maharashtra, India</div>
         </div>
 
         <div class="footer">
-            <p>Thank you for choosing Artz Interior!</p>
+            <p>Thank you for choosing Art Interiorz!</p>
             <p>Transforming Spaces, Creating Dreams Since 2017</p>
         </div>
     </div>
@@ -585,7 +585,7 @@ export default function LivspaceCalculatorPage() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `Artz_Interior_Quote_${new Date().getTime()}.html`;
+    a.download = `Art_Interiorz_Quote_${new Date().getTime()}.html`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
