@@ -11,7 +11,8 @@ export const footerData = {
     { label: "Contact Us", href: "/contact" },
   ],
   studio: [
-    "Plot No 13, Suprabhat Apartments, Shilpa Nagar, Somalwada, Nagpur 440015",
+    "Plot No 13, Suprabhat Apartments, Manish Nagar, Somalwada, Nagpur 440015",
+    "+91 95452 12017",
     "+91 95450 02017",
     "artinteriorz17@gmail.com",
   ],
@@ -20,7 +21,7 @@ export const footerData = {
   socials: [
     { label: "Instagram", href: "https://www.instagram.com/artinteriorz" },
     { label: "Facebook", href: "https://www.facebook.com/artinteriorz" },
-    { label: "WhatsApp", href: "https://wa.me/919545002017?text=Hello%2C%20I%20visited%20your%20website%20and%20want%20more%20information." },
+    { label: "WhatsApp", href: "https://wa.me/919545212017?text=Hello%2C%20I%20visited%20your%20website%20and%20want%20more%20information." },
     { label: "LinkedIn", href: "https://www.linkedin.com/company/art-interiorz/" },
   ],
 };

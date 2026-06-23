@@ -51,7 +51,7 @@ export const serviceCategoriesData = {
         "Hardscape & Softscape Planning",
         "Water Features & Lighting",
       ],
-      image: "/assets/portfolio/Services/specialize/landscape-design.jpg",
+      image: "/assets/portfolio/Services/specialize/landscape-design-new.png",
     },
   ],
 };
@@ -73,9 +73,9 @@ export const servicesDetailData = [
     image: "/assets/portfolio/Services/shape space/architecure-design.jpg",
   },
   {
-    title: "Space Planning & Layout Optimization",
-    text: "Make the most of every square foot. Our space planning services analyse spatial requirements, circulation flow and furniture placement to create functional layouts that maximise efficiency and comfort.",
-    image: "/assets/portfolio/Services/shape space/sapce-planning.webp",
+    title: "Landscape Design",
+    text: "We bring life to exteriors — from home gardens and terraces to commercial courtyards. We blend greenery, pathways, lighting, and seating into an outdoor oasis.",
+    image: "/assets/portfolio/Services/specialize/landscape-design-new.png",
   },
   {
     title: "3D Visualization & Walkthroughs",
@@ -88,9 +88,9 @@ export const servicesDetailData = [
     image: "/assets/portfolio/Services/shape space/rennovation.jpg",
   },
   {
-    title: "Retail Space",
-    text: "Our retail interior designs are strategically crafted to attract attention, encourage engagement and reflect your brand identity. We blend functionality with visual appeal — for boutiques, showrooms and large stores alike.",
-    image: "/assets/portfolio/Services/shape space/retail space.jpg",
+    title: "Commercial Space",
+    text: "We help brands make a bold statement through well-planned commercial spaces. Whether it's an office, showroom, café or retail store — our designs drive productivity, brand engagement and customer experience.",
+    image: "/assets/portfolio/Services/specialize/commercial-design.jpg",
   },
   {
     title: "Custom Furniture & Decor",

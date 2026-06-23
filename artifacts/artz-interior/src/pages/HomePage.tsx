@@ -8,7 +8,7 @@ import { WhyChooseUs } from "@/components/site/WhyChooseUs";
 import { HowItWorks } from "@/components/site/HowItWorks";
 import { HappyClients } from "@/components/site/HappyClients";
 import { Portfolio } from "@/components/site/Portfolio";
-import { Testimonials } from "@/components/site/Testimonials";
+import { GoogleReviews } from "@/components/site/GoogleReviews";
 import { Contact } from "@/components/site/Contact";
 
 export default function HomePage() {
@@ -26,7 +26,7 @@ export default function HomePage() {
       <HowItWorks />
       <HappyClients />
       {/* <Portfolio /> */}
-      <Testimonials />
+      <GoogleReviews />
       <Contact fullWidthMap />
     </SiteShell>
   );

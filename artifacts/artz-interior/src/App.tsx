@@ -12,6 +12,7 @@ const ContactPage = lazy(() => import("@/pages/ContactPage"));
 const BlogPage = lazy(() => import("@/pages/BlogPage"));
 const CalculatorIndexPage = lazy(() => import("@/pages/CalculatorIndexPage"));
 const LivspaceCalculatorPage = lazy(() => import("@/pages/LivspaceCalculatorPage"));
+const CareerPage = lazy(() => import("@/pages/CareerPage"));
 const NotFoundPage = lazy(() => import("@/pages/NotFoundPage"));
 
 
@@ -48,6 +49,7 @@ function AppRoutes() {
           <Route path="/portfolio" component={PortfolioPage} />
           <Route path="/contact" component={ContactPage} />
           <Route path="/blog" component={BlogPage} />
+          <Route path="/career" component={CareerPage} />
           <Route path="/calculator" component={CalculatorIndexPage} />
           <Route path="/calculator/:type" component={LivspaceCalculatorPage} />
           <Route component={NotFoundPage} />

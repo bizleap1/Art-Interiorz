@@ -71,6 +71,22 @@
       "foundingDate": "2017"
     }
     </script>
+    <!-- Smooth Scrolling -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const lenis = new Lenis({
+          lerp: 0.1,
+          wheelMultiplier: 1.2,
+          smoothWheel: true,
+        });
+        function raf(time) {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+      });
+    </script>
   </head>
   <body>
     <div id="root"></div>

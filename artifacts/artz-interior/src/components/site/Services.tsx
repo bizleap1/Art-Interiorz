@@ -5,12 +5,12 @@ import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 
 const serviceImages = [
-  "/assets/livingroom.jpg",
+  "/assets/interior-design.jpeg",
   "/assets/kitchen.jpg",
-  "/assets/portfolio/Services/shape space/rennovation.jpg",
-  "/assets/bedroom.jpg",
-  "/assets/dinning.jpg",
-  "/assets/heronew.jpg",
+  "/assets/renovation.jpeg",
+  "/assets/art-int.png",
+  "/assets/hospitality.jpeg",
+  "/assets/turnkey-ench.jpg",
 ];
 
 export function Services() {

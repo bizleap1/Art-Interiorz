@@ -9,8 +9,8 @@ const videos = [
     thumb: "https://img.youtube.com/vi/-NtoC0LeJzk/hqdefault.jpg",
     fallback: "/assets/livingroom.jpg",
     quote: "They dreamed. We teamed. Together, the perfect space was born.",
-    name: "Sharma Residence",
-    location: "Shilpa Nagar, Nagpur",
+    name: "Shraddha Malviya",
+    location: "Manish Nagar",
     type: "Living Room",
   },
   {
@@ -18,8 +18,8 @@ const videos = [
     thumb: "https://img.youtube.com/vi/GIect0o-JvY/hqdefault.jpg",
     fallback: "/assets/bedroom.jpg",
     quote: "They pictured it. We perfected it. Now, it's their forever home.",
-    name: "Kulkarni Family",
-    location: "Manish Nagar, Nagpur",
+    name: "Abhishekh Mendulkar",
+    location: "Dabha Wadi",
     type: "Bedroom Design",
   },
   {
@@ -27,8 +27,8 @@ const videos = [
     thumb: "https://img.youtube.com/vi/2UqJOidnjg8/hqdefault.jpg",
     fallback: "/assets/kitchen.jpg",
     quote: "From Pinterest boards to real home goals. Another happy client by Art Interiorz.",
-    name: "Deshmukh Residence",
-    location: "Wardha Road, Nagpur",
+    name: "Narendra Bhatad",
+    location: "Dhaba Wadi",
     type: "Complete Home",
   },
   {
@@ -36,8 +36,8 @@ const videos = [
     thumb: "https://img.youtube.com/vi/s-VqDnUZhFw/hqdefault.jpg",
     fallback: "/assets/dinning.jpg",
     quote: "Every corner, every detail — crafted exactly as we imagined it.",
-    name: "Joshi Family",
-    location: "Ramdaspeth, Nagpur",
+    name: "Rahul Patle",
+    location: "Manish Nagar",
     type: "Modular Interior",
   },
   {
@@ -45,8 +45,8 @@ const videos = [
     thumb: "https://img.youtube.com/vi/zRm2Ca2yLt8/hqdefault.jpg",
     fallback: "/assets/modularkitchen.webp",
     quote: "Art Interiorz turned our house into the home we always dreamed of.",
-    name: "Thakur Residence",
-    location: "Somalwada, Nagpur",
+    name: "Tanaya Tripathi",
+    location: "Godrej",
     type: "Full Renovation",
   },
   {
@@ -54,8 +54,8 @@ const videos = [
     thumb: "https://img.youtube.com/vi/e-zgonynVY0/hqdefault.jpg",
     fallback: "/assets/hero.jpg",
     quote: "We wanted a space that felt like us. Art Interiorz delivered exactly that.",
-    name: "Mishra Family",
-    location: "Civil Lines, Nagpur",
+    name: "Sapna Jadhav",
+    location: "Ujwal Nagar",
     type: "Full Home Design",
   },
   {
@@ -63,8 +63,8 @@ const videos = [
     thumb: "https://img.youtube.com/vi/2hV67o8GL6U/hqdefault.jpg",
     fallback: "/assets/kitchen.jpg",
     quote: "From concept to completion — a seamless, beautiful experience.",
-    name: "Pawar Residence",
-    location: "Dharampeth, Nagpur",
+    name: "Mahesh Dhul",
+    location: "Jaitala",
     type: "Turnkey Project",
   },
   {
@@ -72,8 +72,8 @@ const videos = [
     thumb: "https://img.youtube.com/vi/zcmxHODPhS4/hqdefault.jpg",
     fallback: "/assets/livingroom.jpg",
     quote: "The 3D visualizations matched the final result almost exactly.",
-    name: "Gupta Family",
-    location: "Sitabuldi, Nagpur",
+    name: "Santosh Shirsat",
+    location: "New Manish Nagar",
     type: "Modular Kitchen",
   },
   {
@@ -81,8 +81,8 @@ const videos = [
     thumb: "https://img.youtube.com/vi/fvvzKTANszk/hqdefault.jpg",
     fallback: "/assets/bedroom.jpg",
     quote: "Best decision we made — a home that exceeds our every expectation.",
-    name: "Rane Residence",
-    location: "Pratap Nagar, Nagpur",
+    name: "Ajay Gohane",
+    location: "Sonegao Lake",
     type: "Hospitality Design",
   },
 ];
@@ -217,18 +217,27 @@ export function HappyClients() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Page dots */}
-        <div className="flex items-center justify-center gap-2 mt-10">
-          {Array.from({ length: totalPages }).map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setPage(i)}
-              aria-label={`Page ${i + 1}`}
-              className={`transition-all duration-300 rounded-full ${
-                i === page ? "w-8 h-2 bg-gold" : "w-2 h-2 bg-border hover:bg-charcoal/40"
-              }`}
-            />
-          ))}
+        {/* Page dots and Many More */}
+        <div className="flex flex-col items-center justify-center mt-12 gap-10">
+          <div className="flex items-center gap-2">
+            {Array.from({ length: totalPages }).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setPage(i)}
+                aria-label={`Page ${i + 1}`}
+                className={`transition-all duration-300 rounded-full ${
+                  i === page ? "w-8 h-2 bg-gold" : "w-2 h-2 bg-border hover:bg-charcoal/40"
+                }`}
+              />
+            ))}
+          </div>
+          <Reveal delay={0.2}>
+            <div className="flex items-center gap-6 text-charcoal/60 hover:text-gold transition-colors duration-300">
+              <span className="h-px w-20 bg-gradient-to-r from-transparent to-current"></span>
+              <span className="font-display text-2xl md:text-3xl tracking-[0.1em] italic text-gradient-gold">And Many More...</span>
+              <span className="h-px w-20 bg-gradient-to-l from-transparent to-current"></span>
+            </div>
+          </Reveal>
         </div>
       </div>
 

@@ -13,36 +13,36 @@ import { Link } from "wouter";
 const reasons = [
   {
     id: "interior-excellence",
-    label: "",
-    image: "/assets/Interior-Excellence-1-267x300.jpg",
+    label: "Interior Excellence",
+    image: "/assets/portfolio/Services/specialize/hospitality-design.webp",
     icon: Star,
     is3D: false,
   },
   {
     id: "guaranteed-satisfaction",
-    label: "",
-    image: "/assets/guarranteed%20Satisfaction.webp",
+    label: "Guaranteed Satisfaction",
+    image: "/assets/guaranteed_satisfaction.png",
     icon: BadgeCheck,
     is3D: false,
   },
   {
     id: "modular-kitchen",
-    label: "",
-    image: "/assets/modularkitchen2.webp",
+    label: "Modular Storage",
+    image: "/assets/modular_storage.png",
     icon: Layers,
     is3D: false,
   },
   {
     id: "3d-insights",
-    label: "",
-    image: "/assets/3D-Insights-.webp",
+    label: "3D Insights",
+    image: "/assets/3d_insights.png",
     icon: Box,
     is3D: false,
   },
   {
     id: "smart-pricing",
-    label: "",
-    image: "/assets/Smart%20pricing%20img.webp",
+    label: "Smart Pricing",
+    image: "/assets/smart_pricing.png",
     icon: IndianRupee,
     is3D: false,
   },
@@ -124,8 +124,9 @@ export function WhyChooseUs() {
                   loading="lazy"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1.2s] group-hover:scale-110"
                 />
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/25 to-transparent" />
+                {/* Refined gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/95 via-charcoal/40 to-transparent mix-blend-multiply" />
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent opacity-90" />
 
                 {/* Icon badge — top left */}
                 <div className={`absolute top-3 left-3 flex items-center justify-center w-9 h-9 rounded-full ${r.is3D ? "bg-transparent" : "bg-charcoal/50 backdrop-blur-sm border border-warm-white/20"}`}>
@@ -140,13 +141,13 @@ export function WhyChooseUs() {
                 <div className="absolute top-0 inset-x-0 h-0.5 bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
 
                 {/* Label */}
-                <div className="absolute bottom-0 inset-x-0 p-4">
+                <div className="absolute bottom-0 inset-x-0 p-5">
                   {r.is3D && (
                     <div className="flex items-center gap-1.5 mb-1.5">
                       <span className="text-[9px] tracking-[0.2em] uppercase text-gold font-semibold">3D Modelling</span>
                     </div>
                   )}
-                  <p className="text-warm-white font-medium text-[13px] leading-snug">{r.label}</p>
+                  <p className="text-warm-white font-medium text-sm tracking-wide leading-snug">{r.label}</p>
                 </div>
               </motion.div>
             </Reveal>
@@ -159,7 +160,7 @@ export function WhyChooseUs() {
           <Reveal className="lg:col-span-5">
             <div className="grid grid-cols-3 gap-3 h-[340px]">
               <div className="col-span-1 overflow-hidden rounded-lg">
-                <img src="/assets/hero.jpg" alt="Interior" loading="lazy" className="h-full w-full object-cover" />
+                <img src="/assets/heronew.jpg" alt="Interior" loading="lazy" className="h-full w-full object-cover" />
               </div>
               <div className="col-span-1 overflow-hidden rounded-lg mt-8">
                 <img src="/assets/livingroom.jpg" alt="Living room" loading="lazy" className="h-full w-full object-cover" />
@@ -172,29 +173,44 @@ export function WhyChooseUs() {
 
           {/* Right — bullets */}
           <div className="lg:col-span-7 lg:pl-8">
-            <Reveal><SectionLabel>Our Promise</SectionLabel></Reveal>
+            <Reveal><SectionLabel>Our Process</SectionLabel></Reveal>
             <Reveal delay={0.1}>
               <h3 className="mt-5 font-display text-3xl md:text-4xl lg:text-5xl leading-tight">
-                Why Choose{" "}
-                <em className="italic text-gradient-gold">Art Interiorz</em>
+                How We Bring Your{" "}
+                <em className="italic text-gradient-gold">Vision</em> to Life
               </h3>
             </Reveal>
-            <ul className="mt-8 space-y-4">
-              {bullets.map((b, i) => (
-                <Reveal key={b} delay={0.15 + i * 0.06}>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 size={18} className="text-gold flex-shrink-0 mt-0.5" strokeWidth={1.8} />
-                    <span className="text-charcoal text-[15px] leading-relaxed">{b}</span>
-                  </li>
+            <div className="mt-10 space-y-6">
+              {[
+                { title: "Book your consultation", desc: "Start your journey by scheduling an initial meeting." },
+                { title: "Design consultation", desc: "Discuss your vision, requirements, and budget with our experts." },
+                { title: "Design sign off", desc: "Review and approve the finalized 3D designs and quotations." },
+                { title: "Expert installation", desc: "Our skilled team brings your approved design to life on-site." },
+                { title: "Styling and decor", desc: "Adding the final touches with curated furniture and accessories." },
+                { title: "Handover", desc: "Your dream space is ready. Welcome to your new home." }
+              ].map((step, i) => (
+                <Reveal key={step.title} delay={0.15 + i * 0.08}>
+                  <div className="flex gap-5 group">
+                    <div className="flex flex-col items-center">
+                      <div className="w-8 h-8 rounded-full border border-gold flex items-center justify-center bg-ivory text-gold font-display text-sm group-hover:bg-gold group-hover:text-warm-white transition-colors">
+                        {i + 1}
+                      </div>
+                      {i !== 5 && <div className="w-px h-full bg-border mt-2 group-hover:bg-gold/50 transition-colors" />}
+                    </div>
+                    <div className="pb-4">
+                      <h4 className="font-semibold text-charcoal text-base">{step.title}</h4>
+                      <p className="text-muted-foreground text-sm mt-1">{step.desc}</p>
+                    </div>
+                  </div>
                 </Reveal>
               ))}
-            </ul>
-            <Reveal delay={0.5}>
+            </div>
+            <Reveal delay={0.6}>
               <Link
-                href="/about"
-                className="mt-10 inline-flex items-center gap-3 bg-charcoal text-warm-white px-8 py-3.5 text-[11px] font-bold tracking-[0.25em] uppercase hover:bg-gold transition-colors duration-300"
+                href="/contact"
+                className="mt-6 inline-flex items-center gap-3 bg-charcoal text-warm-white px-8 py-3.5 text-[11px] font-bold tracking-[0.25em] uppercase hover:bg-gold transition-colors duration-300"
               >
-                Learn More About Us
+                Start Your Project
               </Link>
             </Reveal>
           </div>

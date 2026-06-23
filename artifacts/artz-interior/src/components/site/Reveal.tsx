@@ -19,11 +19,10 @@ export function Reveal({
     <motion.div
       variants={variants}
       initial="hidden"
-      animate="show"
       whileInView="show"
       viewport={{ once: true, amount: 0.08 }}
       transition={{ delay }}
-      className={className}
+      className={`will-change-[opacity,transform] ${className || ""}`}
     >
       {children}
     </motion.div>
@@ -32,7 +31,7 @@ export function Reveal({
 
 export function SectionLabel({ children }: { children: ReactNode }) {
   return (
-    <div className="flex items-center gap-4 text-xs tracking-luxury uppercase text-muted-foreground">
+    <div className="inline-flex items-center gap-4 text-xs tracking-luxury uppercase text-muted-foreground">
       <span className="h-px w-10 bg-gold" />
       {children}
     </div>

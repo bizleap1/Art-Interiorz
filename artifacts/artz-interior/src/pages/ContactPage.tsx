@@ -18,7 +18,7 @@ export default function ContactPage() {
       <PageHero
         title="Contact Us"
         crumb="Contact"
-        image="/assets/about.jpg"
+        image="/assets/livingroom.jpg"
       />
       <Contact fullWidthMap />
 

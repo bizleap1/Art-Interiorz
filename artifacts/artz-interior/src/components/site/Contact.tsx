@@ -14,7 +14,7 @@ const iconMap = {
 } as const;
 
 const mapEmbedUrl =
-  "https://maps.google.com/maps?q=Shilpa+Nagar+Somalwada+Nagpur+Maharashtra+440015&t=&z=15&ie=UTF8&iwloc=&output=embed";
+  "https://maps.google.com/maps?q=Manish+Nagar+Somalwada+Nagpur+Maharashtra+440015&t=&z=15&ie=UTF8&iwloc=&output=embed";
 
 export function Contact({ fullWidthMap = false }: { fullWidthMap?: boolean }) {
   const [sent, setSent] = useState(false);
@@ -112,7 +112,7 @@ export function Contact({ fullWidthMap = false }: { fullWidthMap?: boolean }) {
                 const Icon = iconMap[info.label as keyof typeof iconMap] ?? MapPin;
                 const isPhone = info.label === "Telephone";
                 return (
-                  <Reveal key={info.label} delay={0.2 + i * 0.1}>
+                  <Reveal key={`${info.label}-${i}`} delay={0.2 + i * 0.1}>
                     <div className="flex items-start gap-5 group">
                       <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-border group-hover:border-gold group-hover:text-gold transition-colors">
                         <Icon size={18} strokeWidth={1.4} />
@@ -122,13 +122,28 @@ export function Contact({ fullWidthMap = false }: { fullWidthMap?: boolean }) {
                           {info.label}
                         </div>
                         {isPhone ? (
-                          <a
-                            href={`tel:${info.value.replace(/\s/g, "")}`}
-                            onClick={() => handlePhoneClick(info.value)}
-                            className="mt-1 text-charcoal hover:text-gold transition-colors"
-                          >
-                            {info.value}
-                          </a>
+                          Array.isArray(info.value) ? (
+                            <div className="mt-1 flex flex-col gap-1">
+                              {info.value.map((phone, idx) => (
+                                <a
+                                  key={idx}
+                                  href={`tel:${phone.replace(/\s/g, "")}`}
+                                  onClick={() => handlePhoneClick(phone)}
+                                  className="text-charcoal hover:text-gold transition-colors block"
+                                >
+                                  {phone}
+                                </a>
+                              ))}
+                            </div>
+                          ) : (
+                            <a
+                              href={`tel:${(info.value as string).replace(/\s/g, "")}`}
+                              onClick={() => handlePhoneClick(info.value as string)}
+                              className="mt-1 block text-charcoal hover:text-gold transition-colors"
+                            >
+                              {info.value}
+                            </a>
+                          )
                         ) : (
                           <div className="mt-1 text-charcoal">{info.value}</div>
                         )}
@@ -155,7 +170,7 @@ export function Contact({ fullWidthMap = false }: { fullWidthMap?: boolean }) {
                 </div>
                 <div className="mt-3 flex items-center gap-2 text-[10px] tracking-luxury uppercase text-muted-foreground">
                   <MapPin size={11} className="text-gold" />
-                  Shilpa Nagar, Somalwada, Nagpur · By appointment
+                  Manish Nagar, Somalwada, Nagpur · By appointment
                 </div>
               </Reveal>
             )}
@@ -258,7 +273,7 @@ export function Contact({ fullWidthMap = false }: { fullWidthMap?: boolean }) {
             <Reveal>
               <div className="flex items-center gap-2 text-[10px] tracking-luxury uppercase text-muted-foreground">
                 <MapPin size={11} className="text-gold" />
-                Shilpa Nagar, Somalwada, Nagpur · By appointment
+                Manish Nagar, Somalwada, Nagpur · By appointment
               </div>
             </Reveal>
           </div>

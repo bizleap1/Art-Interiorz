@@ -15,7 +15,7 @@ export function Hero() {
   return (
     <section id="home" ref={ref} className="relative min-h-[100dvh] w-full overflow-hidden flex items-center">
       {/* Static hero background */}
-      <motion.div style={{ y }} className="absolute inset-0">
+      <motion.div style={{ y }} className="absolute inset-0 will-change-transform">
         <img
           src={heroImage.src}
           alt={heroImage.alt}
@@ -31,7 +31,7 @@ export function Hero() {
       {/* Content */}
       <motion.div
         style={{ opacity }}
-        className="relative z-20 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pt-32 pb-28 flex flex-col"
+        className="relative z-20 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pt-32 pb-28 flex flex-col will-change-[opacity,transform]"
       >
         <motion.div
           initial={false}
@@ -115,16 +115,7 @@ export function Hero() {
         </motion.div>
       </motion.div>
 
-      <motion.a
-        href="#about"
-        initial={false}
-        animate={{ opacity: 1, y: [0, 10, 0] }}
-        transition={{ y: { repeat: Infinity, duration: 2.4 } }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-warm-white/80 text-[11px] font-medium tracking-[0.3em] uppercase"
-      >
-        Scroll
-        <ArrowDown size={16} />
-      </motion.a>
+
     </section>
   );
 }

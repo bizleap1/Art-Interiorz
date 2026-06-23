@@ -72,7 +72,7 @@ export const blogData = {
       category: "Renovation",
       readTime: "6 min read",
       date: "April 18, 2025",
-      image: "/assets/Blog/Home-renovation.jpg",
+      image: "/assets/Blog/renovation-sharp.jpg",
     },
     {
       slug: "hospitality-design-essentials",

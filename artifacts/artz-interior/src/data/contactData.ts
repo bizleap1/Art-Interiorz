@@ -11,11 +11,11 @@ export const contactData = {
     {
       label: "Studio",
       value:
-        "Plot No 13, Suprabhat Apartments, 1st Floor, Shilpa Society, Narendra Nagar Extension, Shilpa Nagar, Somalwada, Nagpur, Maharashtra 440015",
+        "Plot No 13, Suprabhat Apartments, 1st Floor, Shilpa Society, Narendra Nagar Extension, Manish Nagar, Somalwada, Nagpur, Maharashtra 440015",
     },
-    { label: "Telephone", value: "+91 95450 02017" },
+    { label: "Telephone", value: ["+91 95452 12017", "+91 95450 02017"] },
     { label: "Email", value: "artinteriorz17@gmail.com" },
     { label: "Careers", value: "artinteriorz.hr@gmail.com" },
   ],
-  whatsapp: "https://wa.me/919545002017?text=Hello%2C%20I%20visited%20your%20website%20and%20want%20more%20information.",
+  whatsapp: "https://wa.me/919545212017?text=Hello%2C%20I%20visited%20your%20website%20and%20want%20more%20information.",
 };

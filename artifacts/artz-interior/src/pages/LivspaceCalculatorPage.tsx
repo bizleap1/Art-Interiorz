@@ -28,7 +28,14 @@ interface BHKOption {
 }
 
 const bhkOptions: BHKOption[] = [
-  { id: "1bhk", label: "1 BHK" },
+  {
+    id: "1bhk",
+    label: "1 BHK",
+    subOptions: [
+      { id: "1bhk-small", label: "Small", desc: "Standard size" },
+      { id: "1bhk-large", label: "Large", desc: "Spacious size" },
+    ],
+  },
   {
     id: "2bhk",
     label: "2 BHK",
@@ -54,12 +61,8 @@ const bhkOptions: BHKOption[] = [
     ],
   },
   {
-    id: "4plus",
-    label: "4+ BHK",
-    subOptions: [
-      { id: "4plus-small", label: "Small", desc: "Below 2000 sq ft" },
-      { id: "4plus-large", label: "Large", desc: "Above 2000 sq ft" },
-    ],
+    id: "bungalow",
+    label: "Bungalow",
   },
 ];
 
@@ -195,7 +198,7 @@ export default function LivspaceCalculatorPage() {
     if (type === "2bhk") return { bedroom: 2, bathroom: 2, kitchen: 1, living: 1, dining: 1 };
     if (type === "3bhk") return { bedroom: 3, bathroom: 3, kitchen: 1, living: 1, dining: 1 };
     if (type === "4bhk") return { bedroom: 4, bathroom: 4, kitchen: 1, living: 1, dining: 1 };
-    if (type === "4plus") return { bedroom: 5, bathroom: 5, kitchen: 1, living: 1, dining: 1 };
+    if (type === "bungalow") return { bedroom: 5, bathroom: 5, kitchen: 1, living: 1, dining: 1 };
     return { bedroom: 10, bathroom: 10, kitchen: 2, living: 2, dining: 2 };
   };
 
@@ -224,6 +227,21 @@ export default function LivspaceCalculatorPage() {
   };
 
   const calculateEstimate = () => {
+    if (type === "full-home") {
+      if (bhkType === "1bhk") {
+        return bhkSubSize === "1bhk-small" ? "₹7 Lakhs" : "₹10 Lakhs";
+      } else if (bhkType === "2bhk") {
+        return bhkSubSize === "2bhk-small" ? "₹12 - 15 Lakhs" : "₹15 - 18 Lakhs";
+      } else if (bhkType === "3bhk") {
+        return bhkSubSize === "3bhk-small" ? "₹15 - 18 Lakhs" : "₹22+ Lakhs";
+      } else if (bhkType === "4bhk") {
+        return bhkSubSize === "4bhk-small" ? "₹20+ Lakhs" : "₹25+ Lakhs";
+      } else if (bhkType === "bungalow" || bhkType === "4plus") {
+        return "₹25 Lakhs";
+      }
+      return "₹7 Lakhs";
+    }
+
     let minPrice = 0;
     let maxPrice = 0;
     let packageMultiplier = 1;
@@ -232,19 +250,7 @@ export default function LivspaceCalculatorPage() {
     else if (selectedPackage === "premium") packageMultiplier = 1.5;
     else if (selectedPackage === "luxe") packageMultiplier = 2.5;
 
-    if (type === "full-home") {
-      let basePrice = 0;
-      if (bhkType === "1bhk") basePrice = 200000;
-      else if (bhkType === "2bhk") basePrice = 300000;
-      else if (bhkType === "3bhk") basePrice = 450000;
-      else if (bhkType === "4bhk") basePrice = 600000;
-      else if (bhkType === "4plus") basePrice = 800000;
-
-      const extraRooms = (roomCounts.living || 0) * 50000 + (roomCounts.kitchen || 0) * 100000 + (roomCounts.bedroom || 0) * 75000 + (roomCounts.bathroom || 0) * 30000 + (roomCounts.dining || 0) * 40000;
-
-      minPrice = (basePrice + extraRooms) * packageMultiplier;
-      maxPrice = minPrice * 1.2;
-    } else if (type === "kitchen") {
+    if (type === "kitchen") {
       let basePrice = 150000;
       if (kitchenLayout === "U-shaped") basePrice = 200000;
       else if (kitchenLayout === "L-shaped") basePrice = 180000;
@@ -305,9 +311,15 @@ export default function LivspaceCalculatorPage() {
 
   const downloadQuote = () => {
     const estimate = calculateEstimate();
-    const estimateMatch = estimate.match(/₹([\d,]+)\s*-\s*₹([\d,]+)/);
-    const minPrice = estimateMatch ? parseInt(estimateMatch[1].replace(/,/g, '')) : 0;
-    const maxPrice = estimateMatch ? parseInt(estimateMatch[2].replace(/,/g, '')) : 0;
+    const isFullHome = type === 'full-home';
+    let minPrice = 0;
+    let maxPrice = 0;
+    
+    if (!isFullHome) {
+      const estimateMatch = estimate.match(/₹([\d,]+)\s*-\s*₹([\d,]+)/);
+      minPrice = estimateMatch ? parseInt(estimateMatch[1].replace(/,/g, '')) : 0;
+      maxPrice = estimateMatch ? parseInt(estimateMatch[2].replace(/,/g, '')) : 0;
+    }
     
     const avgPrice = Math.round((minPrice + maxPrice) / 2);
     const gst = Math.round(avgPrice * 0.18);
@@ -518,9 +530,10 @@ export default function LivspaceCalculatorPage() {
                 <th>Amount</th>
             </tr>
             <tr>
-                <td>Base Estimate Range</td>
+                <td>Estimated Quote</td>
                 <td>${estimate}</td>
             </tr>
+            ${!isFullHome ? `
             <tr>
                 <td>Average Estimate</td>
                 <td>₹${avgPriceFormatted}</td>
@@ -533,6 +546,7 @@ export default function LivspaceCalculatorPage() {
                 <td><strong>TOTAL WITH GST</strong></td>
                 <td><strong>₹${totalFormatted}</strong></td>
             </tr>
+            ` : ''}
         </table>
 
         <div class="section-title">Terms & Conditions</div>

@@ -27,7 +27,7 @@ export const servicesData = {
     },
     {
       icon: Sparkles,
-      title: "Residential Design",
+      title: "Architectural Design",
       text: "Cozy, inviting homes with functional layouts and personal style — at any budget, in every detail.",
     },
     {

@@ -2,7 +2,7 @@ export const aboutPageData = {
   hero: {
     title: "About Us",
     crumb: "About Us",
-    image: "/assets/about.jpg",
+    image: "/assets/luxaryimg.jpg",
   },
   intro: {
     label: "Designing Dreams Since Day One",
@@ -27,7 +27,7 @@ export const aboutPageData = {
         title: "Complete Home Interior Design",
         subtitle: "Transform your home into a cohesive, elegant and functional space.",
         text: "From living rooms to kitchens and bedrooms, we provide end-to-end interior design solutions tailored to your style, needs and budget — including furniture layout, color schemes, lighting design and décor elements.",
-        image: "/assets/portfolio/living-room/lr15.webp",
+        image: "/assets/resedntial-img.webp",
       },
       {
         title: "Turnkey Design & Build Solutions",
