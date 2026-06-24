@@ -29,8 +29,8 @@ export const galleryItems: GalleryItem[] = [
   { id: "new-br-5", src: "/assets/portfolio/new/KIDS BR 4.JPG", category: "BedRoom", alt: "Kids Bedroom" },
   { id: "new-br-6", src: "/assets/portfolio/new/MASTER BR 3.JPG", category: "BedRoom", alt: "Master Bedroom" },
 
-  { id: "new-mk-1", src: "/assets/portfolio/new/KITCHENDINING.1jpg.jpg.jpeg", category: "Modular Kitchen", alt: "Kitchen Dining 1" },
   { id: "new-mk-2", src: "/assets/portfolio/new/KITCHENDINING2.jpg.jpeg", category: "Modular Kitchen", alt: "Kitchen Dining 2" },
+
   { id: "new-mk-3", src: "/assets/portfolio/new/KITCHENDINING3.jpg.jpeg", category: "Modular Kitchen", alt: "Kitchen Dining 3" },
   { id: "new-mk-4", src: "/assets/portfolio/new/KITCHENDINING4.jpg.jpeg", category: "Modular Kitchen", alt: "Kitchen Dining 4" },
   { id: "new-mk-5", src: "/assets/portfolio/new/KITCHENDINING5.jpg.jpeg", category: "Modular Kitchen", alt: "Kitchen Dining 5" },
@@ -54,21 +54,4 @@ export const galleryItems: GalleryItem[] = [
   { id: "new-ot-11", src: "/assets/portfolio/new/IMG_7654.jpg.jpeg", category: "Others", alt: "Other Design" },
   { id: "new-ot-12", src: "/assets/portfolio/new/IMG_7679.jpg.jpeg", category: "Others", alt: "Other Design" },
 
-  // --- OLD IMAGES (Only high-quality, non-duplicate ones) ---
-  { id: "br-18", src: "/assets/portfolio/bedroom/b13.jpg", category: "BedRoom", alt: "Guest bedroom 13" },
-  { id: "br-19", src: "/assets/portfolio/bedroom/b14.webp", category: "BedRoom", alt: "Guest bedroom 14" },
-  { id: "br-20", src: "/assets/portfolio/bedroom/b15.webp", category: "BedRoom", alt: "Guest bedroom 15" },
-  { id: "br-22", src: "/assets/portfolio/bedroom/b17.webp", category: "BedRoom", alt: "Guest bedroom 17" },
-  { id: "br-23", src: "/assets/portfolio/bedroom/b18.webp", category: "BedRoom", alt: "Guest bedroom 18" },
-
-  { id: "lr-5", src: "/assets/portfolio/living-room/lr5.webp", category: "Living Room", alt: "Living Room 5" },
-  { id: "lr-17", src: "/assets/portfolio/living-room/lr17.webp", category: "Living Room", alt: "Living Room 17" },
-  { id: "lr-19", src: "/assets/portfolio/living-room/lr19.webp", category: "Living Room", alt: "Living Room 19" },
-  { id: "lr-20", src: "/assets/portfolio/living-room/lr20.webp", category: "Living Room", alt: "Living Room 20" },
-
-  { id: "mk-7", src: "/assets/portfolio/modular-kitchen/mk7.webp", category: "Modular Kitchen", alt: "Modular Kitchen 7" },
-
-  { id: "ot-5", src: "/assets/portfolio/others/ot5.webp", category: "Others", alt: "Other Design 5" },
-  { id: "ot-9", src: "/assets/portfolio/others/ot9.webp", category: "Others", alt: "Other Design 9" },
-  { id: "ot-10", src: "/assets/portfolio/others/ot10.webp", category: "Others", alt: "Other Design 10" },
 ];
