@@ -40,13 +40,16 @@ export default function PortfolioPage() {
                 </h2>
               </Reveal>
             </div>
-            <Reveal delay={0.2}>
-              <div className="flex flex-wrap gap-x-6 gap-y-3">
+            <Reveal delay={0.2} className="w-full lg:w-auto max-w-full">
+              <div 
+                className="flex overflow-x-auto gap-x-5 md:gap-x-6 pb-2 pr-4 lg:pr-0 hide-scrollbar"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              >
                 {galleryCategories.map((c) => (
                   <button
                     key={c}
                     onClick={() => setActive(c)}
-                    className={`text-xs tracking-[0.25em] uppercase pb-1 border-b transition-colors ${
+                    className={`text-xs whitespace-nowrap shrink-0 tracking-[0.25em] uppercase pb-1 border-b transition-colors ${
                       active === c
                         ? "text-charcoal border-gold"
                         : "text-muted-foreground border-transparent hover:text-charcoal"
@@ -56,6 +59,9 @@ export default function PortfolioPage() {
                   </button>
                 ))}
               </div>
+              <style dangerouslySetInnerHTML={{__html: `
+                .hide-scrollbar::-webkit-scrollbar { display: none; }
+              `}} />
             </Reveal>
           </div>
 

@@ -72,7 +72,7 @@ export const blogData = {
       category: "Renovation",
       readTime: "6 min read",
       date: "April 18, 2025",
-      image: "/assets/Blog/renovation-sharp.jpg",
+      image: "/assets/renovation.jpeg",
     },
     {
       slug: "hospitality-design-essentials",
@@ -108,7 +108,7 @@ export const blogData = {
       category: "Process",
       readTime: "4 min read",
       date: "February 14, 2025",
-      image: "/assets/Blog/3D-visualization.jpg",
+      image: "/assets/portfolio/new/IMG_7648.jpg.jpeg",
     },
     // {
     //   slug: "interior-design-cost-nagpur",

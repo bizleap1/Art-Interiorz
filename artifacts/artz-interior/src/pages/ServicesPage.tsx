@@ -110,11 +110,11 @@ export default function ServicesPage() {
               </h2>
             </Reveal>
           </div>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-4 items-start">
             {servicesDetailData.map((s, i) => (
-              <Reveal key={s.title} delay={i * 0.04}>
+              <Reveal key={s.title} delay={i * 0.04} className="h-fit">
                 <motion.div
-                  className="bg-warm-white overflow-hidden border border-border/50 hover:border-gold/30 transition-colors duration-300 group cursor-pointer"
+                  className="bg-warm-white overflow-hidden border border-border/50 hover:border-gold/30 transition-colors duration-300 group cursor-pointer h-fit"
                   onClick={() => setExpandedService(expandedService === i ? null : i)}
                   whileHover={{ y: -2 }}
                   transition={{ duration: 0.3 }}
@@ -130,7 +130,7 @@ export default function ServicesPage() {
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="text-[10px] tracking-luxury uppercase text-muted-foreground mb-2">
+                      <div className="text-[10px] tracking-[0.25em] uppercase text-muted-foreground mb-2">
                         0{i + 1}
                       </div>
                       <h3 className="font-display text-xl lg:text-2xl group-hover:text-gold transition-colors">{s.title}</h3>
@@ -191,7 +191,7 @@ export default function ServicesPage() {
               </h2>
             </Reveal>
           </div>
-          <div className="grid md:grid-cols-5 gap-px bg-border">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
             {processData.steps.map((step, i) => (
               <Reveal key={step.n} delay={i * 0.05}>
                 <motion.div
@@ -209,7 +209,7 @@ export default function ServicesPage() {
 
           {/* CTA */}
           <Reveal delay={0.4}>
-            <div className="mt-16 text-center">
+            <div className="mt-28 text-center">
               <p className="text-muted-foreground mb-6 max-w-md mx-auto">
                 Ready to start your interior design journey? Let's talk about your space.
               </p>

@@ -14,35 +14,35 @@ const reasons = [
   {
     id: "interior-excellence",
     label: "Interior Excellence",
-    image: "/assets/portfolio/Services/specialize/hospitality-design.webp",
+    image: "/assets/portfolio/new/LIVING 1.JPG",
     icon: Star,
     is3D: false,
   },
   {
     id: "guaranteed-satisfaction",
     label: "Guaranteed Satisfaction",
-    image: "/assets/guaranteed_satisfaction.png",
+    image: "/assets/portfolio/new/BEDROOM 3.1.jpg",
     icon: BadgeCheck,
     is3D: false,
   },
   {
     id: "modular-kitchen",
     label: "Modular Storage",
-    image: "/assets/modular_storage.png",
+    image: "/assets/portfolio/new/IMG_7644.jpg.jpeg",
     icon: Layers,
     is3D: false,
   },
   {
     id: "3d-insights",
     label: "3D Insights",
-    image: "/assets/3d_insights.png",
+    image: "/assets/portfolio/new/LIVING ROOM1.1.jpg",
     icon: Box,
     is3D: false,
   },
   {
     id: "smart-pricing",
     label: "Smart Pricing",
-    image: "/assets/smart_pricing.png",
+    image: "/assets/portfolio/new/BEDROOM1.3..jpg",
     icon: IndianRupee,
     is3D: false,
   },
@@ -160,44 +160,47 @@ export function WhyChooseUs() {
           <Reveal className="lg:col-span-5">
             <div className="grid grid-cols-3 gap-3 h-[340px]">
               <div className="col-span-1 overflow-hidden rounded-lg">
-                <img src="/assets/heronew.jpg" alt="Interior" loading="lazy" className="h-full w-full object-cover" />
+                <img src="/assets/portfolio/new/LIVING 2.1.JPG" alt="Interior" loading="lazy" className="h-full w-full object-cover" />
               </div>
               <div className="col-span-1 overflow-hidden rounded-lg mt-8">
-                <img src="/assets/livingroom.jpg" alt="Living room" loading="lazy" className="h-full w-full object-cover" />
+                <img src="/assets/portfolio/new/BEDROOM2.2.jpg" alt="Living room" loading="lazy" className="h-full w-full object-cover" />
               </div>
               <div className="col-span-1 overflow-hidden rounded-lg">
-                <img src="/assets/bedroom.jpg" alt="Bedroom" loading="lazy" className="h-full w-full object-cover" />
+                <img src="/assets/portfolio/new/DINING 2.1.JPG" alt="Bedroom" loading="lazy" className="h-full w-full object-cover" />
               </div>
             </div>
           </Reveal>
 
           {/* Right — bullets */}
           <div className="lg:col-span-7 lg:pl-8">
-            <Reveal><SectionLabel>Our Process</SectionLabel></Reveal>
+            <Reveal><SectionLabel>Our Philosophy</SectionLabel></Reveal>
             <Reveal delay={0.1}>
               <h3 className="mt-5 font-display text-3xl md:text-4xl lg:text-5xl leading-tight">
                 How We Bring Your{" "}
                 <em className="italic text-gradient-gold">Vision</em> to Life
               </h3>
             </Reveal>
+            <Reveal delay={0.2}>
+              <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
+                We believe that every space has a unique story waiting to be told. 
+                Our approach blends your personal taste with our design expertise, ensuring your home is not just beautiful, but a true reflection of you.
+              </p>
+            </Reveal>
             <div className="mt-10 space-y-6">
               {[
-                { title: "Book your consultation", desc: "Start your journey by scheduling an initial meeting." },
-                { title: "Design consultation", desc: "Discuss your vision, requirements, and budget with our experts." },
-                { title: "Design sign off", desc: "Review and approve the finalized 3D designs and quotations." },
-                { title: "Expert installation", desc: "Our skilled team brings your approved design to life on-site." },
-                { title: "Styling and decor", desc: "Adding the final touches with curated furniture and accessories." },
-                { title: "Handover", desc: "Your dream space is ready. Welcome to your new home." }
+                { title: "Tailored Aesthetics", desc: "Every design is customized to harmonize with your lifestyle and preferences." },
+                { title: "Uncompromising Quality", desc: "We source only premium materials to ensure longevity and elegance in every detail." },
+                { title: "Seamless Execution", desc: "From concept to handover, we manage the entire process to deliver a stress-free experience." }
               ].map((step, i) => (
-                <Reveal key={step.title} delay={0.15 + i * 0.08}>
+                <Reveal key={step.title} delay={0.3 + i * 0.1}>
                   <div className="flex gap-5 group">
-                    <div className="flex flex-col items-center">
-                      <div className="w-8 h-8 rounded-full border border-gold flex items-center justify-center bg-ivory text-gold font-display text-sm group-hover:bg-gold group-hover:text-warm-white transition-colors">
-                        {i + 1}
+                    <div className="flex flex-col items-center shrink-0 w-8">
+                      <div className="w-8 h-8 shrink-0 min-w-[2rem] min-h-[2rem] rounded-full border border-gold flex items-center justify-center bg-ivory text-gold group-hover:bg-gold group-hover:text-warm-white transition-colors">
+                        <CheckCircle2 size={16} />
                       </div>
-                      {i !== 5 && <div className="w-px h-full bg-border mt-2 group-hover:bg-gold/50 transition-colors" />}
+                      {i !== 2 && <div className="w-px h-full bg-border mt-2 group-hover:bg-gold/50 transition-colors" />}
                     </div>
-                    <div className="pb-4">
+                    <div className="pb-4 flex-1">
                       <h4 className="font-semibold text-charcoal text-base">{step.title}</h4>
                       <p className="text-muted-foreground text-sm mt-1">{step.desc}</p>
                     </div>

@@ -1,6 +1,6 @@
 import { Reveal, SectionLabel } from "./Reveal";
-import { Star, ChevronLeft, ChevronRight } from "lucide-react";
-import { useRef } from "react";
+import { Star } from "lucide-react";
+import { useState } from "react";
 
 const GoogleLogo = ({ className = "w-5 h-5" }) => (
   <svg className={className} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -61,17 +61,10 @@ const reviewsData = {
 };
 
 export function GoogleReviews() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollRef.current) {
-      const scrollAmount = window.innerWidth < 768 ? window.innerWidth * 0.85 : window.innerWidth * 0.35;
-      scrollRef.current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
-    }
-  };
+  const [isPaused, setIsPaused] = useState(false);
 
   return (
-    <section className="py-24 lg:py-36 bg-warm-white">
+    <section className="py-24 lg:py-36 bg-warm-white overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div>
@@ -103,50 +96,95 @@ export function GoogleReviews() {
           </Reveal>
         </div>
 
-        {/* CSS Slider Container */}
-        <div ref={scrollRef} className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 hide-scrollbar" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-          {reviewsData.reviews.map((review, idx) => (
-            <Reveal key={idx} delay={0.1 * idx}>
-              <div className="w-[85vw] md:w-[45vw] lg:w-[30vw] snap-start shrink-0 bg-white p-8 rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex items-center gap-4">
-                    <img 
-                      src={review.profile_photo_url} 
-                      alt={review.author_name} 
-                      className="w-12 h-12 rounded-full object-cover"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div>
-                      <h4 className="font-semibold text-charcoal">{review.author_name}</h4>
-                      <span className="text-xs text-muted-foreground">{review.relative_time_description}</span>
+        {/* Marquee Slider Container */}
+        <Reveal delay={0.3}>
+          <div 
+            className="flex overflow-hidden relative w-full gap-6 pb-8 group cursor-pointer"
+            onClick={() => setIsPaused(!isPaused)}
+          >
+            <div 
+              className="flex shrink-0 animate-marquee gap-6"
+              style={{ animationPlayState: isPaused ? 'paused' : 'running' }}
+            >
+              {reviewsData.reviews.map((review, idx) => (
+                <div key={idx} className="w-[85vw] md:w-[45vw] lg:w-[30vw] shrink-0 bg-white p-8 rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center gap-4">
+                      <img 
+                        src={review.profile_photo_url} 
+                        alt={review.author_name} 
+                        className="w-12 h-12 rounded-full object-cover"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div>
+                        <h4 className="font-semibold text-charcoal">{review.author_name}</h4>
+                        <span className="text-xs text-muted-foreground">{review.relative_time_description}</span>
+                      </div>
                     </div>
+                    <GoogleLogo className="w-5 h-5 opacity-90" />
                   </div>
-                  <GoogleLogo className="w-5 h-5 opacity-90" />
+                  <div className="flex text-[#fbbc04] mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={14} fill={i < review.rating ? "currentColor" : "none"} className={i < review.rating ? "text-[#fbbc04]" : "text-gray-300"} />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-relaxed flex-1 whitespace-normal">
+                    "{review.text}"
+                  </p>
                 </div>
-                <div className="flex text-[#fbbc04] mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={14} fill={i < review.rating ? "currentColor" : "none"} className={i < review.rating ? "text-[#fbbc04]" : "text-gray-300"} />
-                  ))}
+              ))}
+            </div>
+            
+            {/* Duplicate for seamless looping */}
+            <div 
+              className="flex shrink-0 animate-marquee gap-6" 
+              aria-hidden="true"
+              style={{ animationPlayState: isPaused ? 'paused' : 'running' }}
+            >
+              {reviewsData.reviews.map((review, idx) => (
+                <div key={`dup-${idx}`} className="w-[85vw] md:w-[45vw] lg:w-[30vw] shrink-0 bg-white p-8 rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center gap-4">
+                      <img 
+                        src={review.profile_photo_url} 
+                        alt={review.author_name} 
+                        className="w-12 h-12 rounded-full object-cover"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div>
+                        <h4 className="font-semibold text-charcoal">{review.author_name}</h4>
+                        <span className="text-xs text-muted-foreground">{review.relative_time_description}</span>
+                      </div>
+                    </div>
+                    <GoogleLogo className="w-5 h-5 opacity-90" />
+                  </div>
+                  <div className="flex text-[#fbbc04] mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={14} fill={i < review.rating ? "currentColor" : "none"} className={i < review.rating ? "text-[#fbbc04]" : "text-gray-300"} />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-relaxed flex-1 whitespace-normal">
+                    "{review.text}"
+                  </p>
                 </div>
-                <p className="text-muted-foreground text-sm leading-relaxed flex-1 whitespace-normal">
-                  "{review.text}"
-                </p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-
-        {/* Navigation Arrows */}
-        <div className="flex justify-center gap-4 mt-8">
-          <button onClick={() => scroll('left')} className="p-4 rounded-full border border-border bg-white hover:bg-gold transition-colors shadow-sm flex items-center justify-center group hover:text-white">
-            <ChevronLeft size={24} className="text-charcoal group-hover:text-white group-hover:-translate-x-1 transition-all" />
-          </button>
-          <button onClick={() => scroll('right')} className="p-4 rounded-full border border-border bg-white hover:bg-gold transition-colors shadow-sm flex items-center justify-center group hover:text-white">
-            <ChevronRight size={24} className="text-charcoal group-hover:text-white group-hover:translate-x-1 transition-all" />
-          </button>
-        </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
       </div>
+
       <style dangerouslySetInnerHTML={{__html: `
+        @keyframes marquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(calc(-100% - 1.5rem));
+          }
+        }
+        .animate-marquee {
+          animation: marquee 50s linear infinite;
+        }
         .hide-scrollbar::-webkit-scrollbar {
           display: none;
         }

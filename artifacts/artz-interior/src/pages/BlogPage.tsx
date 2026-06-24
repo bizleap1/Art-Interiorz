@@ -25,6 +25,7 @@ function BlogModal({ post, onClose }: { post: BlogPost; onClose: () => void }) {
       onClick={onClose}
       className="fixed inset-0 z-[100] overflow-y-auto"
       style={{ background: "rgba(28,26,26,0.88)", backdropFilter: "blur(8px)" }}
+      data-lenis-prevent="true"
     >
       <div className="min-h-screen flex items-start justify-center p-4 pt-12 pb-20">
         <motion.div
@@ -130,6 +131,23 @@ export default function BlogPage() {
   useEffect(() => {
     document.title = "Design Journal & Blog | Art Interiorz Nagpur";
   }, []);
+
+  useEffect(() => {
+    if (activePost) {
+      document.body.style.overflow = "hidden";
+      // @ts-ignore
+      if (window.lenis) window.lenis.stop();
+    } else {
+      document.body.style.overflow = "auto";
+      // @ts-ignore
+      if (window.lenis) window.lenis.start();
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+      // @ts-ignore
+      if (window.lenis) window.lenis.start();
+    };
+  }, [activePost]);
 
   return (
     <SiteShell>

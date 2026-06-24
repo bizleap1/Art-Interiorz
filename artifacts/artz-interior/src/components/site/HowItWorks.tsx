@@ -1,36 +1,42 @@
 import { motion } from "framer-motion";
 import { Reveal, SectionLabel } from "./Reveal";
-import { UserPlus, MonitorPlay, CheckSquare, Hammer, Gift } from "lucide-react";
+import { Calendar, MessageSquare, CheckSquare, Hammer, Sparkles, Gift } from "lucide-react";
 
 const steps = [
   {
-    icon: UserPlus,
-    title: "Free Consultation",
-    desc: "Share your vision and requirements. We walk you through a no-obligation consultation to understand your space, budget and design aspirations.",
+    icon: Calendar,
+    title: "Book your consultation",
+    desc: "Start your journey by scheduling an initial meeting.",
     accent: "#C9A84C",
   },
   {
-    icon: MonitorPlay,
-    title: "Design Presentation",
-    desc: "We create detailed 3D visualizations and mood boards tailored to your space — so you can see and feel your future home before it's built.",
+    icon: MessageSquare,
+    title: "Design consultation",
+    desc: "Discuss your vision, requirements, and budget with our experts.",
     accent: "#6B8EAD",
   },
   {
     icon: CheckSquare,
-    title: "Design Sign-Off",
-    desc: "You review and approve the final design. We refine every detail until it's exactly what you imagined — nothing proceeds without your full confidence.",
+    title: "Design sign off",
+    desc: "Review and approve the finalized 3D designs and quotations.",
     accent: "#5A9E7A",
   },
   {
     icon: Hammer,
-    title: "Expert Installation",
-    desc: "Our skilled team executes the design with premium materials, precise craftsmanship and daily progress updates — on time, every time.",
+    title: "Expert installation",
+    desc: "Our skilled team brings your approved design to life on-site.",
     accent: "#C07A45",
   },
   {
+    icon: Sparkles,
+    title: "Styling and decor",
+    desc: "Adding the final touches with curated furniture and accessories.",
+    accent: "#A67B5B",
+  },
+  {
     icon: Gift,
-    title: "Dream Home Handover",
-    desc: "Your beautiful new space is revealed. We conduct a thorough walkthrough and ensure every detail meets your highest expectations.",
+    title: "Handover",
+    desc: "Your dream space is ready. Welcome to your new home.",
     accent: "#9B72B0",
   },
 ];
@@ -56,13 +62,13 @@ export function HowItWorks() {
           </Reveal>
           <Reveal delay={0.15}>
             <p className="mt-4 text-warm-white/60 max-w-lg mx-auto text-[15px] leading-relaxed">
-              From first conversation to final reveal — a seamless five-step journey to your dream space.
+              From first conversation to final reveal — a seamless six-step journey to your dream space.
             </p>
           </Reveal>
         </div>
 
         {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-6 relative">
           {steps.map((step, i) => (
             <Reveal key={step.title} delay={i * 0.08} className="h-full">
               <motion.div
@@ -110,7 +116,7 @@ export function HowItWorks() {
                 </p>
 
                 {/* Connector Line for Desktop */}
-                {i < steps.length - 1 && (
+                {i < steps.length - 1 && (i + 1) % 3 !== 0 && (
                   <div className="hidden lg:block absolute top-16 -right-3 w-6 border-t border-dashed border-warm-white/15 z-0" />
                 )}
               </motion.div>

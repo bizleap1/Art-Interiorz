@@ -70,7 +70,7 @@ export const servicesDetailData = [
   {
     title: "Architectural Design & Planning",
     text: "We specialise in residential, commercial and institutional spaces that are visually stunning yet practical and sustainable. Our planning ensures smart space utilisation, regulatory compliance and seamless integration with interior design.",
-    image: "/assets/portfolio/Services/shape space/architecure-design.jpg",
+    image: "/assets/portfolio/new/ENTRANCE 1.JPG",
   },
   {
     title: "Landscape Design",
@@ -80,12 +80,12 @@ export const servicesDetailData = [
   {
     title: "3D Visualization & Walkthroughs",
     text: "See it before you build it. Our high-quality 3D renderings and walkthroughs help you visualise every corner, texture and light play — making decisions easier and more confident.",
-    image: "/assets/portfolio/Services/shape space/3d-design.jpg",
+    image: "/assets/portfolio/new/IMG_7653.jpg.jpeg",
   },
   {
     title: "Renovation & Remodeling",
     text: "Breathe new life into old spaces. Whether updating a single room or undertaking a full-scale renovation, we manage everything from design concepts to on-site execution, blending modern trends with timeless design.",
-    image: "/assets/portfolio/Services/shape space/rennovation.jpg",
+    image: "/assets/renovation.jpeg",
   },
   {
     title: "Commercial Space",
@@ -95,7 +95,7 @@ export const servicesDetailData = [
   {
     title: "Custom Furniture & Decor",
     text: "Add personality with pieces that tell your story. We design and curate custom furniture and decor that align with your space, theme and comfort — bespoke solutions where each item fits perfectly in size, style and spirit.",
-    image: "/assets/portfolio/Services/shape space/custom furniture.jpg",
+    image: "/assets/portfolio/new/DINING 3.1.JPG",
   },
 ];
 
@@ -103,14 +103,15 @@ export const processData = {
   label: "How It Works",
   heading: {
     prefix: "A simple, considered",
-    emphasis: "five-step",
+    emphasis: "six-step",
     suffix: "journey.",
   },
   steps: [
-    { n: "01", title: "Project Signup", text: "We meet, listen and understand your lifestyle, space and dreams." },
-    { n: "02", title: "Design Presentation", text: "Concepts, mood boards and 3D visualisations tailored to your vision." },
-    { n: "03", title: "Design Sign-Off", text: "We refine together until every detail feels perfectly yours." },
-    { n: "04", title: "Final Installation", text: "Skilled craftsmen execute your design with precision on-site." },
-    { n: "05", title: "Handover", text: "Your beautifully finished, ready-to-live-in space — delivered with care." },
+    { n: "01", title: "Book your consultation", text: "Start your journey by scheduling an initial meeting." },
+    { n: "02", title: "Design consultation", text: "Discuss your vision, requirements, and budget with our experts." },
+    { n: "03", title: "Design sign off", text: "Review and approve the finalized 3D designs and quotations." },
+    { n: "04", title: "Expert installation", text: "Our skilled team brings your approved design to life on-site." },
+    { n: "05", title: "Styling and decor", text: "Adding the final touches with curated furniture and accessories." },
+    { n: "06", title: "Handover", text: "Your dream space is ready. Welcome to your new home." },
   ],
 };
