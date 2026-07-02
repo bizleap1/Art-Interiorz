@@ -24,6 +24,9 @@ export function Footer() {
             <p className="mt-5 text-warm-white/60 max-w-sm leading-relaxed">
               {footerData.tagline}
             </p>
+            <div className="mt-4 text-xs text-warm-white/40 tracking-luxury uppercase">
+              Designed and Maintained by <a href="https://bizleap.in/" target="_blank" rel="noreferrer" className="text-gold font-bold hover:opacity-80 transition-opacity">BIZLEAP</a>
+            </div>
             <div className="mt-8 flex gap-3">
               {footerData.socials.map((s) => {
                 const Icon = socialIcons[s.label] ?? Instagram;
@@ -71,7 +74,6 @@ export function Footer() {
 
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-warm-white/40">
           <div>Copyright 2017, ART Interiorz, All Rights Reserved.</div>
-          <div className="tracking-luxury uppercase">Designed and Maintained by BIZLEAP</div>
         </div>
       </div>
     </footer>
